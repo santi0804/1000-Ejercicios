@@ -1,0 +1,142 @@
+
+                            TODOS LOS EJERCICIOS YA PRACTICADOS
+
+// ejejrcicio # 1
+
+/*
+function tournamentWinner (competitions,results) {
+   const scores = {}
+   let winner = ''
+
+   for (let i = 0; i < competitions.length; i++ ) {
+       //const home = competitions[i][0]
+       const [home,away] = competitions[i]
+       const winningTeam = results[i] === 0 ? away : home
+
+       scores[winningTeam] = (scores[winningTeam] || 0) + 3  // si no existe que ponga automaticamente un 0
+
+       if (!winner || scores[winningTeam] > scores[winner] ) {  // condicional
+           winner = winningTeam
+       }
+
+   }
+   return winner
+}
+
+
+
+const competitions = [
+   ['JavaScript', 'C#'],
+   ['C#','Python'],
+   ['Python','JavaScript']
+]
+const results = [0,0,1]  // array unidimensional
+
+console.log(tournamentWinner(competitions,results))
+
+*/
+
+------------------------------------------------------------------------------
+
+//Ejercicio # 2 = Objetos
+
+const persona = {
+    nombre: 'Rogelio-Chingon',
+    edad: 36,
+    Cedula: 102044,
+    Hobbie:'jugar',
+    direccicón: {
+        calle: 'calle no te encuentro',
+        ciudad: 'Tunal'
+    },
+
+    saludar() {
+        console.log(`Hola, mi nombre es ${persona.nombre}`)
+    }
+}
+console.log(persona);
+
+console.log(persona.nombre);         /*Aqui quiero consumir el objeto- accedo solo al valor de la propiedad */
+
+persona.saludar();      /* Mando a llamar el metodo saludar como una función.*/
+
+persona.telefono ='Mi telefono es: 2308080';       /*De esta forma agrego una nueva propiedad del objeto original aparte */
+
+console.log(persona.telefono);
+
+console.log(persona.direccicón.calle);  /* De esta forma puedo acceder a un parametro de un objeto annidado que 
+                                           este dentro de otro objeto princiapl*/
+
+persona.despedir = () => {     /* Aqui creee un objeto nuevo con una array funtions*/
+    console.log('Chaoo pues');
+}
+
+persona.despedir();   /*De esta forma puedo compilar no hay necesidad de console.log / para evitar los undefined
+                        por que el metodo persee, ya tiene su propio consolo.log */
+
+delete persona.Hobbie;  /*Con la palabra reservada Delete */
+
+
+-----------------------------------------------------------
+
+//Ejercicio # 3
+
+//  Funcion constructora para crear muchos objetos sn necesidad e copiar y pegar//
+
+/* let persona ={
+    nombre:'Mariana',
+    apellido:'florez',
+    edad:22
+} */
+
+
+function Persona(nombre, apellido, edad) {      //Palabra reservada this
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad
+}
+const persona1 = new Persona('Rogelio', 'Chingon', 25);   //Esta es una nueva instancia para crear una nueva persona//
+console.log(persona1);
+
+persona1.nacionalidad = 'Chichombiano';     //De esta forma puedo crear una nueva propiedad externa del objeto principal
+
+const persona2 =new Persona('Valentina', 'Barrios', 22);
+console.log(persona2)
+
+Persona.prototype.saludar = function () {
+    console.log(`Hola, soy ${this.nombre} ${this.apellido} y tengo ${this.edad}`)
+};
+persona1.saludar();
+persona2.saludar();
+
+
+-----------------------------------------------------------------------------------
+
+Ejercicio 4.
+
+
+//
+
+class Persona{                       //Sintaisis de clases
+    constructor(nombre, edad) {      //Constructor y parametros.
+        this.nombre = nombre;        //propiedades
+        this.edad = edad;
+    }
+    saludar() {
+        console.log(`Hola mi nombre es: ${this.nombre} y tengo ${this.edad} años`)
+    }                                // Estos son los metodos
+}
+
+
+const persona1 = new Persona('Mariana', 25);   //Esta es la istancia
+persona1.saludar();
+
+
+
+
+
+
+
+
+
+
