@@ -131,10 +131,174 @@ class Persona{                       //Sintaisis de clases
 const persona1 = new Persona('Mariana', 25);   //Esta es la istancia
 persona1.saludar();
 
+---------------------------------------------------------------------------------------------
+
+Ejercicio 5.
 
 
+//
+
+class Persona{                       //Sintaisis de clases
+    constructor(nombre, edad) {      //COnstructor y parametros.
+        this.nombre = nombre;        //propiedades
+        this.edad = edad;
+    }
+    saludar() {
+        console.log(`Hola mi nombre es: ${this.nombre} y tengo ${this.edad} años`)
+    }                                // Estos son los metodos
+}
 
 
+const persona1 = new Persona('Mariana', 25);   //Esta es la istancia que se crea con NEW
+
+persona1.saludar();
+
+----------------------------------------------------------------------------------------
+
+Ejercicio 6.
+
+//clases constructoras
+//funciones constructoras
+//prototipos = metodos y proiedades = que se puedan compartir e las demas clases.
+
+
+class Animal {
+    constructor(nombre, tipo) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+    }
+    emitirSonido() {
+        console.log('EL animal emite un sonido')
+    }
+}
+
+class Perro extends Animal {   // Con la palabra reservada Extends y super.y se aplica la herencia
+    constructor(nombre, tipo, raza) {
+        super(nombre, tipo);
+        this.raza = raza;
+    }
+    emitirSonido() {    // este es un metodo
+        console.log('El perro ladra')
+    }
+    correr() {          // este es un metodo
+        console.log(`${this.nombre} corre y muerde al vecino`);
+    }
+}
+
+const perro1 = new Perro( 'Lucian', 'Perro', 'Rowailer');
+console.log(perro1)
+perro1.correr();
+perro1.emitirSonido();
+
+perro1.nuevoMetodo = function () {   // Nueva instancia
+  console.log('Este es otro metodo');
+}
+
+Perro.prototype.segundoMetodo = function () {  //Cadena de prototipo
+    console.log('Es otro metodo');
+}
+
+------------------------------------------------------------------------------------
+
+Ejercicio 7.
+
+
+// Palabras reservda this
+//  this -- hace referencia al objeto mismo o a la clase  que se este construyendo
+
+
+class Persona{
+    constructor(nombre, edad){
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+}
+
+const persona1 = new Persona('Gelem', 26)     // instancia
+
+console.log(persona1)
+
+persona1.nuevoMetodo = function() {
+    console.log(`Mi nombre es ${this.nombre} y tengo ${this.edad} lista para el voleo`);
+}
+
+
+----------------------------------------------------------------------------------------
+
+Ejercicio 8.
+
+
+// Ejercicio de crear una red social
+
+/* REQUERIMIENTOS
+
+1- El usuario debe poder ingresar su usuario y contraseña
+
+2- El sistema debe de ser capaz de validar si el usuario y la contraseña ingresados 
+existen en la BD.
+
+3- Si el usuario y contraseña son correctos, el sistema debe de mostrar un  mjs de
+bievenidad y mostrar el timeline del usuario.
+
+4- SI el usuario y contraseña son incorrectos, el sistema debe mostrar un mensaje de
+error y no mostrar ningun timeline.
+
+*/
+
+const usersDatabase = [
+    {
+        username: "Boruto",
+        password: "1234",
+    },
+    {
+        username: "Sasuke",
+        password: "1234",
+    },
+    {
+        username: "Naruto",
+        password: "1234",
+    },
+];
+
+const usersTimeline = [
+    {
+        username: "Boruto",
+        password: "Te gusta Programar",
+    },
+    {
+        username: "Sasuke",
+        password: "Inteligente si aprendes",
+    },
+    {
+        username: "Naruto",
+        password: "Eres el mas teso",
+    },
+];
+
+const username = prompt("Cual es tu usuario");
+const password = prompt("Cual es tu contraseña");
+
+function usuarioExitente(username, password) {
+    for (let i = 0; i < usersDatabase.length; i++) {   // length es la longitud de la base de datos
+        if ( usersDatabase[i].username === username &&
+            usersDatabase[i].password === password)
+        {                                      // si es correcto ocurre esto                                   
+            return true;
+                                              // Aqui rompemos el ciclo para que no siga recorriendo las validaciones, cuando sea correcto.
+           }                                  // si no es correcto, ocurre esto
+                                         
+    }  return false;
+}         
+
+function signIn(username, password) {
+    if (usuarioExitente(username, password)) {
+        alert(`Bienvenido  tu cuenta ${username}`);
+        console.log(usersTimeline);
+    } else {
+        alert("Te equivocaste chingon");
+    }
+}
+signIn(username, password);
 
 
 
