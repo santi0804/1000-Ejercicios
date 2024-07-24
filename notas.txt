@@ -332,9 +332,104 @@ console.log(!!numeroEntero) */
 
 -----------------------------------------------------------------------
 
-Ejercicio 10.
+Ejercicio 10.  varias sentencias
 
 
+// sentenciasIF
+
+let operacion = 5 + 1;
+
+if(operacion > 7) {
+    console.log('Es true');
+
+} else if (operacion < 7 && operacion > 2) {
+    console.log('Esta entre 7 y 2')
+} else {
+    console.log('Es menor de 2')
+}
+
+
+// Sentencia SWITCH (INTERRUPTOR)
+
+
+let operacion = 5 + 8
+
+switch (operacion) {
+    case 0:
+        console.log('Resultado es 0, chingon');
+        break;
+
+    case 13:
+        console.log('El resultado es 13 y aqui se las tengo');
+        break;
+    case 15:
+        console.log('el resultado es 15 Chingote');
+        break;
+        
+        default:
+        console.log('No diste ni en la madre perro')
+}
+
+_________________________________________________________________
+
+function saludar(nombre = "Chingote") {
+    console.log(`¡Hola Puto ${nombre}!`)
+}
+saludar()
+
+----------------------------------------------------------------------------
+
+Ejercicio 11.
+
+
+
+// Funciones
+
+class Inventario {
+    constructor(nombre) {
+        this.nombre = nombre;
+        this.articulos = {};
+    }
+
+    getNombre() {
+        console.log(this.nombre);
+    }
+
+    add(articulo, cantidad) {
+        this.articulos[articulo] = cantidad;
+    }
+
+    cantidad(articulo) {
+        return this.articulos[articulo];
+    }
+}
+
+let libros = new Inventario("Libros");
+libros.getNombre();
+libros.add("Aprendiendo perros", 5);
+console.log("Aprendiendo perros, Cantidad: " + libros.cantidad("Aprendiendo perros"));
+
+______________________________________________________________________________
+
+
+Ejercicio 12.
+
+
+// Cuenta de un cliente hambriento
+
+
+const valorComidad = 18000 +13000;
+const valorBebidad = 1200 + 6500;
+const valorTotal = valorComidad +valorBebidad;
+
+
+console.log("Gasto en comida:" + "$", +  valorComidad)
+console.log("Gasto en bebidad:" + "$", + valorBebidad)
+console.log("El muerto de hambre se trago, un total de;" + "$", + valorTotal)
+
+______________________________________________________________________________
+
+Ejejrcicio 13.
 
 
 
