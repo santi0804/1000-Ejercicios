@@ -370,8 +370,6 @@ switch (operacion) {
         console.log('No diste ni en la madre perro')
 }
 
-_________________________________________________________________
-
 function saludar(nombre = "Chingote") {
     console.log(`¡Hola Puto ${nombre}!`)
 }
@@ -436,11 +434,38 @@ console.log("Usted se tragó un total de: $" + totalConIva);
 
 ______________________________________________________________________________
 
-Ejejrcicio 13.
+Ejejrcicio 13.  De la comida
+
+// Aqui el HTML "desplegar"
+
+ <!-- Ejercico comida -->
+
+     <div>
+        <label for="comida">Costo de la comida:</label>
+        <input type="number" id="comida" name="comida">
+        <br>
+        <label for="bebida">Costo de bebida:</label>
+        <input type="number" id="bebida" name="bebida">
+        <br>
+        <label for="postre">Costo del Postre:</label>
+        <input type="number" id="postre" name="postre">
+        <br>
+        <label for="entraditas">Costo entraditas:</label>
+        <input type="number" id="entraditas" name="entraditas">
+        <br>
+        <br>
+        <button id="showResults">Resultados</button>
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="results"></div>
+            </div>
+        </div>
+
+    </div>
 
 
-
-// Cuenta de un cliente con modal
 document.getElementById('showResults').addEventListener('click', function () {
 
     const valorComida = parseFloat(document.getElementById('comida').value) || 0;
@@ -464,7 +489,7 @@ document.getElementById('showResults').addEventListener('click', function () {
         <p>Gasto en entraditas: $${valorEntraditas}</p>
         <p>IVA: $${deducirIva}</p>
         <p>Usted se tragó un total de: $${totalConIva}</p>
-        <p>Propina sugerida (10%): $${propina}</p>
+        <p>Propina voluntaria (10%): $${propina}</p>
         <p>Total con propina: $${totalConPropina}</p>
     `;
     document.getElementById('results').innerHTML = results;
@@ -490,6 +515,7 @@ document.getElementById('showResults').addEventListener('click', function () {
 ---------------------------------------------------------------------------------------------
 
 Ejercicio 14.
+
 
 
 
