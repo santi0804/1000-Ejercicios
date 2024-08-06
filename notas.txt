@@ -514,7 +514,107 @@ document.getElementById('showResults').addEventListener('click', function () {
 
 ---------------------------------------------------------------------------------------------
 
-Ejercicio 14.
+Ejercicio 14. POO
+
+
+class Comida{
+    constructor(id, nombre, color) {
+        this.id = id;
+        this.nombre = nombre;
+        this.color = color;
+    }
+
+    nombrar(){
+        return `${this.nombre} de color ${this.color}`;
+    }
+}
+
+class Galleta extends Comida {   // esta es una subclasse//
+    constructor(id, nombre, color, sabor) {
+        super(id,nombre,color )
+        this.sabor = sabor;
+    }
+    nombrarGalleta(){
+        return `Galletas ${this.nombre} sabor ${this.sabor}`
+    }
+}
+
+const manzana = new Comida(1, 'Manzana', 'rojo');
+const pera = new Comida(2, 'Pera', 'verde');
+const oreo = new Galleta(3,'oreo', 'negro','Chocolate');
+const chokis = new Galleta(4,'Chokis', 'Caffe','Fresas');
+
+console.log(manzana.nombrar());
+console.log(pera.nombrar());
+console.log(oreo.nombrarGalleta());
+console.log(chokis.nombrarGalleta());
+
+
+------------------------------------------------------------------------------------------
+
+Ejercicio 15-  POKEAPI
+
+
+// Aqui el HTML "desplegar" 
+
+"Nota Agragar Boostrap"
+
+<div class="container text.center w-25 mt-4">
+        <form>
+            <input class="form-control" type="text" placeholder="Pokemon...">
+            <button type="submit" class="mt-2 btn btn-primary"> Buscar</button>
+        </form>
+        <div class="pokemon-container mt-4">
+
+        </div>
+
+
+    </div>
+
+
+
+/* const input = document.querySelector("input");
+const button = document.querySelector("button");
+const pokemonContainer = document.querySelector(".pokemon-container");
+
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    traerPokemon(input.value);
+});
+
+function traerPokemon(pokemon) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
+        .then((res) => res.json())
+        .then((data) => {
+        crearPokemon(data);
+    });
+}
+
+
+function crearPokemon(pokemon) {
+    const img = document.createElement('img');
+    img.src = pokemon.sprites.front_default;
+
+    const h3 = document.createElement('h3');
+    h3.textContent = pokemon.name;
+
+    const div = document.createElement('div');     //con este div se adjunta todo//
+    div.appendChild(img);
+    div.appendChild(h3);
+
+    pokemonContainer.appendChild(div);    
+}
+
+traerPokemon(); */
+
+----------------------------------------------------------------------------------------------
+
+Ejercicio 16.
+
+
+
+
+
 
 
 
